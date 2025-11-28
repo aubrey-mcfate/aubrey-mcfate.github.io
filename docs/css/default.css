@@ -149,18 +149,22 @@ ul li a p {
     line-height: 1.5rem;
 }
 
-.dream-date {
-    font-size: 14px;
-    color: #d3d3d3;
-    text-transform: uppercase;
+p.choice {
+    display: inline-block;
+    margin: 1em 0.25em 0 0;
 }
 
-.dream-date:before {
-    content: "\2014\00a0";
+p.choice a {
+    background-color: #d4d4d8;
+    border-radius: 10px;
+    color: #27272A;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 2px 13px 2px 15px;
 }
 
-.dream-date:after {
-    content: "\00a0\2014";
+p.choice a span {
+    margin-left: 1px;
 }
 
 footer {

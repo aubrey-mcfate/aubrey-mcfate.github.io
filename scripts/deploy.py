@@ -67,10 +67,13 @@ with open(filename, 'r') as file:
 
 content = '\n'.join(content_lines)
 
+content = re.sub(r'\[([^\]]+?)\]\(([^\)]+?)\)', r'<p class="choice"><a href="\2">\1 <span>&rarr;</span></a></p>', content)
 content = '\n<p>' + re.sub(r'\n{2,}', '</p>\n\n<p>', content.strip()) + '</p>\n'
 content = content.replace('<p><hr /></p>', '<hr />')
 content = content.replace('<p><h2>', '<h2>')
 content = content.replace('</h2></p>', '</h2>')
+content = content.replace('<p><p', '<p')
+content = content.replace('</p></p>', '</p>')
 
 if(folder.startswith("dreams/")):
     dt = datetime.strptime(datecreated, '%Y-%m-%d')
